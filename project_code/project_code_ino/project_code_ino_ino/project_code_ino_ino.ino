@@ -30,40 +30,31 @@ void loop() {
      }
   
   Serial.println(sensorValue);
-     
-     delay(100);
-       
-       if(sensorValue >200){
-  digitalWrite(waterPump, LOW);
-      digitalWrite(RELAY1, 1);
-  
-         
+  delay(100);
+  if(sensorValue >200){
+    digitalWrite(waterPump, LOW);
+     digitalWrite(RELAY1, 1);      
   }
    
 if (voice.length() > 0) {
     Serial.println(voice);
  
-  if(voice == "*start") {
-    
+  if(voice == "*start")
+  {
     digitalWrite(waterPump, HIGH);
   }
    
-    
-   
-    
-   else if(voice == "*trigga"){
+   else if(voice == "*trigga")
+   {
      digitalWrite(RELAY1, 1);
    }
-
-
    else  if(voice == "*avbryt")
    {
      digitalWrite(RELAY1, 0);
-   digitalWrite(waterPump,LOW)
- ;}
-
+   digitalWrite(waterPump,LOW);
+   }
+  
  
-//-----------------------------------------------------------------------// 
 voice="";}} //Reset the variable after initiating
 
          
